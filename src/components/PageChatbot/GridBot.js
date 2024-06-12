@@ -1,5 +1,5 @@
 import { Grid, GridItem, Badge, Center } from '@chakra-ui/react';
-import NavBot from './NavBot';
+import NavBot from './NavModule/NavBot';
 import themeColors from '../ThemeColors'; 
 import ModalMessageChat from './ChatModule/GridChatMessage';
 

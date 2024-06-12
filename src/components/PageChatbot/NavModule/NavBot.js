@@ -1,9 +1,10 @@
+import React from 'react';
 import { Button, VStack, Icon, Tooltip, Divider, useDisclosure } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
 import { FaRegClipboard, FaRegUser, FaTools, FaUsersCog } from 'react-icons/fa';
 import { MdExitToApp } from 'react-icons/md';
-import themeColors from '../ThemeColors'; // Importe o arquivo de configuração de tema
-import ModalUserConfig from './UserConfigNav';
+import themeColors from '../../ThemeColors'; // Importe o arquivo de configuração de tema
+import ModalUserConfig from './UserConfigNav'; // Certifique-se de que o caminho está correto
 
 export default function NavBot() {
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export default function NavBot() {
         bg={themeColors.primaryHoverColor}
       >
         <Button
-          onClick={onOpen}
+          onClick={onOpen} // Abre o modal ao clicar
           display="flex"
           alignItems="center"
           justifyContent="center"
