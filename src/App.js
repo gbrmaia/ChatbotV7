@@ -1,6 +1,6 @@
 import React from 'react';
 import { ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import ModalGridLoginCadastro from './components/PageLogCad/PageLoginCadastro';
 import ModalGridBot from './components/PageChatbot/GridBot';
 import HistoricChat from './components/HistoricChat'; // Importe o componente HistoricChat aqui
