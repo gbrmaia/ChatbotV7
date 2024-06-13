@@ -9,8 +9,13 @@ import ModalUserConfig from './UserConfigNav'; // Certifique-se de que o caminho
 export default function NavBot() {
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  
   const handleSair = () => {
     navigate('/');
+  };
+
+  const handleHistoricChat = () => {
+    navigate('/historic-chat'); 
   };
 
   return (
@@ -45,6 +50,7 @@ export default function NavBot() {
         bg={themeColors.primaryColor}
       >
         <Button
+          onClick={handleHistoricChat}
           display="flex"
           alignItems="center"
           justifyContent="center"
