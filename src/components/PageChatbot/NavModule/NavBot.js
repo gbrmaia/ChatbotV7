@@ -1,7 +1,18 @@
 import React from 'react';
-import { Button, VStack, Icon, Tooltip, Divider, useDisclosure } from '@chakra-ui/react';
+import {
+  Button,
+  VStack,
+  Icon,
+  Tooltip,
+  Divider,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
-import { FaRegClipboard, FaRegUser, FaTools, FaUsersCog } from 'react-icons/fa';
+import {
+  FaRegClipboard,
+  FaRegUser,
+  FaRobot,
+} from 'react-icons/fa';
 import { MdExitToApp } from 'react-icons/md';
 import themeColors from '../../ThemeColors'; // Importe o arquivo de configuração de tema
 import ModalUserConfig from './UserConfigNav'; // Certifique-se de que o caminho está correto
@@ -9,22 +20,49 @@ import ModalUserConfig from './UserConfigNav'; // Certifique-se de que o caminho
 export default function NavBot() {
   const navigate = useNavigate();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+
   const handleSair = () => {
     navigate('/');
   };
 
   const handleHistoricChat = () => {
-    navigate('/historic-chat'); 
+    navigate('/historic-chat');
+  };
+
+  const handleChatbot = () => {
+    navigate('/grid-bot');
   };
 
   return (
     <VStack mt={'2vh'} spacing="2vh" h="100vh">
       <Tooltip
         hasArrow
+        label="Chatbot"
+        placement="right"
+        bg={themeColors.primaryColor}
+      >
+        <Button
+          onClick={handleChatbot}
+          display="flex"
+          alignItems="center"
+          justifyContent="center"
+          bg="transparent"
+          color={themeColors.primaryColor}
+          _hover={{
+            bg: 'transparent',
+            color: themeColors.primaryHoverColor,
+          }}
+          p={0}
+        >
+          <Icon as={FaRobot} boxSize={6} />
+        </Button>
+      </Tooltip>
+      <Divider />
+      <Tooltip
+        hasArrow
         label="Meu perfil"
         placement="right"
-        bg={themeColors.primaryHoverColor}
+        bg={themeColors.primaryColor}
       >
         <Button
           onClick={onOpen} // Abre o modal ao clicar
@@ -63,50 +101,6 @@ export default function NavBot() {
           p={0}
         >
           <Icon as={FaRegClipboard} boxSize={5} />
-        </Button>
-      </Tooltip>
-      <Divider />
-      <Tooltip
-        hasArrow
-        label="Configuração da conta"
-        placement="right"
-        bg={themeColors.primaryColor}
-      >
-        <Button
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          bg="transparent"
-          color={themeColors.primaryColor}
-          _hover={{
-            bg: 'transparent',
-            color: themeColors.primaryHoverColor,
-          }}
-          p={0}
-        >
-          <Icon as={FaTools} boxSize={5} />
-        </Button>
-      </Tooltip>
-      <Divider />
-      <Tooltip
-        hasArrow
-        label="Configuração de usuários"
-        placement="right"
-        bg={themeColors.primaryColor}
-      >
-        <Button
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-          bg="transparent"
-          color={themeColors.primaryColor}
-          _hover={{
-            bg: 'transparent',
-            color: themeColors.primaryHoverColor,
-          }}
-          p={0}
-        >
-          <Icon as={FaUsersCog} boxSize={6} />
         </Button>
       </Tooltip>
       <Divider />

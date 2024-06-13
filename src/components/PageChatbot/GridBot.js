@@ -41,11 +41,11 @@ export default function ModalGridBot() {
         pl="2"
         bg="#F7FAFC"
         area={'footer'}
-        display={{ base: 'none', md: 'none', lg: 'block' }}
+        display={{ base: 'none', md: 'none', lg: 'flex' }}
+        alignItems={'center'}
+        justifyContent={'center'}
       >
-        <Center>
           <Badge variant="outline" colorScheme={themeColors.primaryColorScheme}>Todos os direitos reservados a @EQP7</Badge>
-        </Center>
       </GridItem>
     </Grid>
   );
