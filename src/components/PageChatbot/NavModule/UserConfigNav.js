@@ -28,7 +28,7 @@ export default function ModalUserConfig({ isOpen, onClose }) {
       <ModalOverlay />
       <ModalContent>
         <ModalHeader pb={0} textAlign={'center'}>
-          Meu perfil
+          {isEditing ? 'Editando Perfil' : 'Meu Perfil'}
           <Tooltip
             hasArrow
             label={isEditing ? 'Editando perfil' : 'Editar perfil'}

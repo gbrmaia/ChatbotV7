@@ -6,13 +6,16 @@ import {
     Avatar,
     VStack,
     Tooltip,
+    Button,
   } from '@chakra-ui/react';
   import { FaRegEdit  } from 'react-icons/fa';
+  import themeColors from '../../ThemeColors'; // Importe o arquivo de configuração de tema
   
   export default function UserConfigEdit() {
     return (
       <VStack spacing={4}>
         <Avatar size={'2xl'} />
+        <Button mt={-2} size={'xs'} variant={'link'} colorScheme={themeColors.primaryColorScheme}>Alterar Avatar</Button>
         <FormControl>
           <InputGroup>
             <Input
